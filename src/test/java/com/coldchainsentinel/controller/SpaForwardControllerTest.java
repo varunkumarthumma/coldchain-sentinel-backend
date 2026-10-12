@@ -29,7 +29,7 @@ class SpaForwardControllerTest {
     void rootPath_ForwardsToIndexHtml() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(forwardedUrl("index.html"));
+                .andExpect(forwardedUrl("/index.html"));
     }
 
     @Test
