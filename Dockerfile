@@ -7,7 +7,7 @@ COPY .mvn .mvn
 COPY mvnw .
 COPY src src
 
-RUN chmod +x mvnw && ./mvnw -B clean package -DskipTests
+RUN chmod +x mvnw && mvn -B -Dmaven.repo.local=/tmp/maven-repo clean package -DskipTests
 
 FROM eclipse-temurin:17-jre
 
