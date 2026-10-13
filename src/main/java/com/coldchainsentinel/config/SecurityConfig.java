@@ -67,6 +67,7 @@ public class SecurityConfig {
                 .sessionFixation(fixation -> fixation.changeSessionId())
             )
             .authorizeHttpRequests(auth -> auth
+            	.requestMatchers(HttpMethod.GET, "/api/health").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/auth/csrf").permitAll()
                 .requestMatchers(HttpMethod.POST,
                     "/api/auth/register",
