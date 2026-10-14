@@ -27,8 +27,10 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 @WebMvcTest(SensorController.class)
+@AutoConfigureMockMvc(addFilters = false)
 @ContextConfiguration(classes = {ColdChainSentinelApplication.class, SensorController.class, GlobalExceptionHandler.class})
 class SensorControllerTest {
 

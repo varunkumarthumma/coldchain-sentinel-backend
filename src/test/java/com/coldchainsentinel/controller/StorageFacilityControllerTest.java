@@ -28,8 +28,10 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 @WebMvcTest(StorageFacilityController.class)
+@AutoConfigureMockMvc(addFilters = false)
 @ContextConfiguration(classes = {ColdChainSentinelApplication.class, StorageFacilityController.class, GlobalExceptionHandler.class})
 class StorageFacilityControllerTest {
 

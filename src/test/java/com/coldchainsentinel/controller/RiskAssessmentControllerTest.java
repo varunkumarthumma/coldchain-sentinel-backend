@@ -26,8 +26,10 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 @WebMvcTest(RiskAssessmentController.class)
+@AutoConfigureMockMvc(addFilters = false)
 @ContextConfiguration(classes = {ColdChainSentinelApplication.class, RiskAssessmentController.class, GlobalExceptionHandler.class})
 class RiskAssessmentControllerTest {
 

@@ -36,6 +36,9 @@ class ColdChainSentinelApplicationTests {
     @MockitoBean
     private com.coldchainsentinel.repository.CommodityProfileRepository commodityProfileRepository;
 
+    @MockitoBean
+    private com.coldchainsentinel.repository.AppUserRepository appUserRepository;
+
     @Test
     @DisplayName("Application context loads successfully without requiring MySQL")
     void contextLoads() {

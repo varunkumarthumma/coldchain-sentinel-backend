@@ -12,11 +12,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+
 /**
  * Web-layer test for HealthController.
  * Validates endpoint contract and payload without starting a server or requiring a database.
  */
 @WebMvcTest(HealthController.class)
+@AutoConfigureMockMvc(addFilters = false)
 @ContextConfiguration(classes = {ColdChainSentinelApplication.class, HealthController.class})
 class HealthControllerTests {
 
